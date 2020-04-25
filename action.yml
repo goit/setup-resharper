@@ -1,0 +1,12 @@
+name: 'Setup ReSharper Command Line Tools'
+description: 'Set up a specific version of the ReSharper Command Line Tools in the PATH'
+author: 'Jozef Izso'
+branding:
+  icon: play
+  color: green
+inputs: 
+  version:
+    description: 'ReSharper CLT version to use. Example: 2019.3.4'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
