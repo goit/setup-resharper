@@ -1,8 +1,7 @@
 import * as core from '@actions/core';
 import * as tc from '@actions/tool-cache';
 
-const IS_WINDOWS = process.platform === 'win32';
-const RESHAPER_CTL_CACHE_NAME = 'resharper-ctl';
+const RESHAPER_CTL_CACHE_NAME = 'v1-resharper-ctl';
 
 async function run() {
   try {
@@ -14,18 +13,13 @@ async function run() {
     let toolPath = tc.find(RESHAPER_CTL_CACHE_NAME, version);
 
     if (!toolPath) {
-      let url = ''
-      if (IS_WINDOWS) {
-        url = `https://download.jetbrains.com/resharper/ReSharperUltimate.${version}/JetBrains.ReSharper.CommandLineTools.${version}.zip`;
-      } else {
-        url = `https://download.jetbrains.com/resharper/ReSharperUltimate.${version}/JetBrains.ReSharper.CommandLineTools.Unix.${version}.tar.gz`;
-      }
+      let url = `https://download.jetbrains.com/resharper/dotUltimate.${version}/JetBrains.ReSharper.CommandLineTools.${version}.zip`;
 
       console.log('Downloading ReSharper CTL', url);
       let downloadPath = await tc.downloadTool(url);
 
       console.log('Extracting tools', downloadPath);
-      let extPath: string = IS_WINDOWS ? await tc.extractZip(downloadPath) : await tc.extractTar(downloadPath);
+      let extPath: string = await tc.extractZip(downloadPath);
 
       console.log('Caching tools');
       let cachedDir = await tc.cacheDir(extPath, RESHAPER_CTL_CACHE_NAME, version);
