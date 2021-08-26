@@ -18,10 +18,16 @@ steps:
 - uses: actions/checkout@master
 - uses: goit/setup-resharper@v1
   with:
-    version: '2020.1'
+    version: '2021.2'
 - run: InspectCode <solution file>
 ```
 
+## Note
+
+Use `goit/setup-resharper@v1` for ReSharper CTL 2020.1 and older releases.
+
+The download address changed and `goit/setup-resharper@v2` supports ReSharper CTL 2020.2 and newer.
+
 ## License
 
-The scripts and documentation in this project are released under the [MIT License](LICENSE)
+Scripts and documentation in this project are released under the [MIT License](LICENSE)

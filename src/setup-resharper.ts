@@ -1,7 +1,7 @@
 import * as core from '@actions/core';
 import * as tc from '@actions/tool-cache';
 
-const RESHAPER_CTL_CACHE_NAME = 'v1-resharper-ctl';
+const RESHAPER_CTL_CACHE_NAME = 'v2-resharper-ctl';
 
 async function run() {
   try {

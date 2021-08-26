@@ -33,4 +33,4 @@ jobs:
       - name: Setup ReSharper CTL
         uses: ./
         with:
-          version: 2020.1
+          version: 2021.2

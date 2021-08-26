@@ -5466,8 +5466,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 };
 
 
-const IS_WINDOWS = process.platform === 'win32';
-const RESHAPER_CTL_CACHE_NAME = 'resharper-ctl';
+const RESHAPER_CTL_CACHE_NAME = 'v2-resharper-ctl';
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -5476,17 +5475,11 @@ function run() {
             console.log('Checking tool cache');
             let toolPath = _actions_tool_cache__WEBPACK_IMPORTED_MODULE_1__.find(RESHAPER_CTL_CACHE_NAME, version);
             if (!toolPath) {
-                let url = '';
-                if (IS_WINDOWS) {
-                    url = `https://download.jetbrains.com/resharper/ReSharperUltimate.${version}/JetBrains.ReSharper.CommandLineTools.${version}.zip`;
-                }
-                else {
-                    url = `https://download.jetbrains.com/resharper/ReSharperUltimate.${version}/JetBrains.ReSharper.CommandLineTools.Unix.${version}.tar.gz`;
-                }
+                let url = `https://download.jetbrains.com/resharper/dotUltimate.${version}/JetBrains.ReSharper.CommandLineTools.${version}.zip`;
                 console.log('Downloading ReSharper CTL', url);
                 let downloadPath = yield _actions_tool_cache__WEBPACK_IMPORTED_MODULE_1__.downloadTool(url);
                 console.log('Extracting tools', downloadPath);
-                let extPath = IS_WINDOWS ? yield _actions_tool_cache__WEBPACK_IMPORTED_MODULE_1__.extractZip(downloadPath) : yield _actions_tool_cache__WEBPACK_IMPORTED_MODULE_1__.extractTar(downloadPath);
+                let extPath = yield _actions_tool_cache__WEBPACK_IMPORTED_MODULE_1__.extractZip(downloadPath);
                 console.log('Caching tools');
                 let cachedDir = yield _actions_tool_cache__WEBPACK_IMPORTED_MODULE_1__.cacheDir(extPath, RESHAPER_CTL_CACHE_NAME, version);
                 toolPath = cachedDir;
