@@ -16,7 +16,7 @@ Basic:
 ```yaml
 steps:
 - uses: actions/checkout@master
-- uses: goit/setup-resharper@v2
+- uses: goit/setup-resharper@v2.0.0
   with:
     version: '2021.2'
 - run: InspectCode <solution file>
@@ -24,9 +24,9 @@ steps:
 
 ## Note
 
-Use `goit/setup-resharper@v1` for ReSharper CTL 2020.1 and older releases.
+Use `goit/setup-resharper@v1.0.0` for ReSharper CTL 2020.1 and older releases.
 
-The download address changed and `goit/setup-resharper@v2` supports ReSharper CTL 2020.2 and newer.
+The download address changed and `goit/setup-resharper@v2.0.0` supports ReSharper CTL 2020.2 and newer.
 
 ## License
 
