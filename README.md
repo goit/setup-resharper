@@ -16,7 +16,7 @@ Basic:
 ```yaml
 steps:
 - uses: actions/checkout@master
-- uses: goit/setup-resharper@v2
+- uses: goit/setup-resharper@v3
   with:
     version: '2021.2'
 - run: InspectCode <solution file>
