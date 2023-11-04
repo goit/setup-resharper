@@ -33,7 +33,11 @@ async function run() {
 
     console.log('Successfully installed', version);
   } catch (error) {
-    core.setFailed(error.message);
+    if (error instanceof Error) {
+      core.setFailed(error.message);
+    } else {
+      core.setFailed(`Unexpected error: ${error}`);
+    }
   }
 }
 
