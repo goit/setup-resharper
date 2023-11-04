@@ -27,12 +27,12 @@
   "author": "Jozef Izso",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.5.0",
-    "@actions/tool-cache": "^1.7.1"
+    "@actions/core": "^1.10.1",
+    "@actions/tool-cache": "^2.0.1"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.2",
+    "@types/node": "^20.8.10",
     "@typescript-eslint/parser": "^4.29.3",
     "@vercel/ncc": "^0.29.2",
     "eslint": "^7.32.0",
