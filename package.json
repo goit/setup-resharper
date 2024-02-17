@@ -1,6 +1,6 @@
 {
   "name": "setup-resharper",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "private": true,
   "description": "Setup ReSharper Command Line Tools in GitHub Action",
   "engines": {
